@@ -1,12 +1,4 @@
 #pragma once
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <cstdlib>
-#include <SFML/Graphics.hpp>
-#include <memory>
-
 #include "macros.hpp"
 #include "Resources.hpp"
 
@@ -18,6 +10,7 @@ public:
 	void findMovement(Vector2f&);
 	bool findClick(Vector2f&);
     const CircleShape& getCircle(size_t row, size_t col) {return m_board[row][col];}
+
 private:
 	void setBoard();
 	

@@ -57,6 +57,7 @@ if (MSVC)
     set (SFML_DIR "C:/SFML/SFML-2.5.1/lib/cmake/SFML")
 endif ()
 
+set(CMAKE_C_COMPILER /full/path/to/qcc --arg1 --arg2)
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 
 set_target_properties (sfml-system sfml-window sfml-graphics sfml-audio sfml-network PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)

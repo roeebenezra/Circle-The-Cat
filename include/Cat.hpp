@@ -1,20 +1,28 @@
 #pragma once
-#include "Board.hpp"
-#include "Bfs.hpp"
+
 
 struct NextMove{
-    size_t _row = 0, _col = 0;
+    unsigned _row = 0, _col = 0;
 };
 
-class Cat
-{
+#include "Board.hpp"
+#include "MoveObject.hpp"
+#include "macros.hpp"
+#include <SFML/Graphics.hpp>
+
+class Cat  : public MoveObject {
+
 public:
-	explicit Cat(Board&);
-    ~Cat() = default;
-	void showCat(RenderWindow& window) const { window.draw(m_catSprite); }
-	void setCatPosition(NextMove&);
+    explicit Cat(Board &);
+    void showCat(sf::RenderWindow &window) const { window.draw(m_catSprite); }
+    void move();
+    sf::Vector2i getCatCoordinates()const { return m_place; }
+    bool checkCatWon() const;
 
 private:
-	Sprite m_catSprite;
-	Board m_board;
+    void setCatPosition(const sf::Vector2i &);
+    Sprite m_catSprite;
+    Board *m_board;
+    sf::Vector2i m_place;
+    bool m_catWon;
 };

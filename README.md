@@ -5,8 +5,8 @@ authors:
 - Yakov Haimoff
 
 ### Overview 
-A game which the player draws circles around a cat to trap it. De-signed with C++ SFML graphic library.
-
+A game which the player draws circles around a cat to trap it.
+Designed with C++ SFML graphic library.
 The cat escape is implemented using a smart search algorithm BFS to find his best path. 
 
 ### Requirements
